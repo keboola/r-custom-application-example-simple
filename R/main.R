@@ -10,8 +10,11 @@ main <- function(datadir) {
 
   # do something very clever
   for (column in colnames(data)) {
-    data[[column]] <- gsub("rr", "r", data[[column]])
-    data[[column]] <- gsub("r", "w", data[[column]])
+    data[[column]] <- as.character(data[[column]])
+    data[[column]] <- gsub("cc", "c", data[[column]])
+    data[[column]] <- gsub("ss", "s", data[[column]])
+    data[[column]] <- gsub("c", "th", data[[column]])
+    data[[column]] <- gsub("s", "th", data[[column]])
     data[[paste0('length_', column)]] <- stringr::str_length(data[[column]])
   }
 
