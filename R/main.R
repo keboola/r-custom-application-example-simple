@@ -15,6 +15,7 @@ main <- function(datadir) {
     data[[column]] <- gsub("ss", "s", data[[column]])
     data[[column]] <- gsub("c", "th", data[[column]])
     data[[column]] <- gsub("s", "th", data[[column]])
+    data[[column]] <- gsub("tt", "t", data[[column]])
     data[[paste0('length_', column)]] <- stringr::str_length(data[[column]])
   }
 
